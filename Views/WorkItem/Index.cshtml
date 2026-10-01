@@ -1,0 +1,168 @@
+@model WorkItemListViewModel
+<form id="confirmForm" asp-action="Confirm" method="post">
+    <input type="hidden" name="sort" value="@ViewData["Sort"]" />
+    <input type="hidden" name="page" value="@Model.CurrentPage" />
+</form>
+@if (TempData["SuccessMessage"]!= null)
+{
+    <p>@TempData["SuccessMessage"]</p>  
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <p>@TempData["ErrorMessage"]</p>  
+}
+@if (Model.Items.Count == 0)
+{
+    <p>目前無待辦項目</p>
+}
+else
+{
+    <div class="work-item-list">
+        <h2>Work Item List</h2>
+        <a asp-action="Index" asp-route-sort="asc" class="btn btn-outline-primary">
+            由舊到新
+        </a>
+        <a asp-action="Index" asp-route-sort="desc" class="btn btn-outline-primary">
+        由新到舊
+        </a>
+        <table class="table"> 
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAll" />
+                        <label for="selectAll">Select All</label></th>
+                    <th>No.</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td><input  type="checkbox"
+                            name="workItemIds"
+                            value="@item.Id" 
+                            form="confirmForm"/></td>
+                        <td>@item.Id</td>
+                        <td>@item.Title</td>
+                        <td> @if (item.IsConfirmed)
+                            {
+                                <span>已確認</span>
+                            }
+                            else
+                            {
+                                <span>待確認</span>
+                            }
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <a asp-action="Detail" asp-route-id="@item.Id" 
+                                class="btn btn-outline-primary" asp-route-sort="@ViewData["Sort"]"
+                                asp-route-page="@Model.CurrentPage">查看詳情</a>
+                                @if(item.IsConfirmed)
+                                {   
+                                    <form asp-action="UndoConfirm" method="post" class="undo-form">
+                                    <input type="hidden" name="workItemId"value="@item.Id" />
+                                    <input type="hidden" name="sort" value="@ViewData["Sort"]" />
+                                    <input type="hidden" name="page" value="@Model.CurrentPage" />
+                                    <button type="submit" class="btn btn-outline-secondary">撤銷確認</button> 
+                                    </form>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="list-footer">
+            <button type="submit" form="confirmForm" id="confirmButton" disabled>確認</button>
+            <div class="pagination-buttons">
+                @if (Model.CurrentPage > 1)
+                {
+                    <a asp-action="Index" asp-route-sort="@ViewData["Sort"]"
+                    asp-route-page="@(Model.CurrentPage-1)" class="btn btn-outline-primary" >
+                    上一頁
+                    </a>
+                }
+                @if (Model.CurrentPage < Model.TotalPages)
+                {
+                    <a asp-action="Index" asp-route-sort="@ViewData["Sort"]"
+                    asp-route-page="@(Model.CurrentPage+1)" class="btn btn-outline-primary" >
+                    下一頁
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+    
+}
+
+<script>
+    const checkboxes=document.querySelectorAll('input[type="checkbox"][name="workItemIds"]');
+    const confirmButton=document.getElementById('confirmButton');
+    const selectAll=document.getElementById('selectAll');
+    const undoForms=document.querySelectorAll(".undo-form")
+    function updateConfirmButton(){
+        const hasSelected =
+        [...checkboxes].some(checkbox=>checkbox.checked);
+        confirmButton.disabled=!hasSelected;
+    }
+    function updateSelectAll(){
+        checkboxes.forEach(checkbox => {
+        checkbox.checked = selectAll.checked;
+        updateWorkItemSelection(checkbox);});
+        updateConfirmButton();
+    }
+    function updateSelectAllState(){
+        const allSelected =
+        checkboxes.length>0 &&[...checkboxes].every(checkbox=>checkbox.checked);
+        selectAll.checked=allSelected;
+    }
+    function updateWorkItemSelection(checkbox){
+        const workItem= checkbox.closest("tr");
+        workItem.classList.toggle("selected", checkbox.checked);
+    }
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", ()=>{
+            updateConfirmButton();
+            updateWorkItemSelection(checkbox);
+            updateSelectAllState();
+        });
+    });
+    undoForms.forEach(undoForm => {
+        undoForm.addEventListener("submit",(event)=>{
+            const confirmed = confirm("確定要將此項目標記回『待確認』嗎？");
+            if (!confirmed) {
+                event.preventDefault();
+            }
+        });
+    });
+    if (selectAll!=null){
+        selectAll.addEventListener("change",updateSelectAll)
+    }
+    
+
+</script>
+<style>
+    tr.selected >td{
+        background-color: #e9f3ff;
+    }
+    .work-item-list {
+        max-width: 700px;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+    .list-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    .pagination-buttons {
+        display: flex;
+        gap: 5px;
+    }
+    .action-buttons {
+        display: flex;
+        gap: 5px;
+    }
+</style>

@@ -1,0 +1,59 @@
+@model WorkItemDetailViewModel
+<div class="work-item-detail">
+    <h2>Work Item Detail</h2>
+
+    <div class="detail-field">
+    <strong>編號</strong>
+    <div>@Model.Id</div>
+    </div>
+
+    <div class="detail-field">
+    <strong>標題</strong>
+    <div>@Model.Title</div>
+    </div>
+
+    <div class="detail-field">
+    <strong>描述</strong>
+    <div>@Model.Description</div>
+    </div>
+    
+    <div class="detail-field">
+        <strong>狀態</strong>
+        <div>
+            @if (Model.IsConfirmed)
+            {
+                <span>已確認</span>
+            }
+            else
+            {
+                <span>待確認</span>
+            }
+        </div>
+    </div>
+    <div class="detail-field">
+        <strong>建立時間</strong>
+        <div>@Model.CreatedAt</div>
+    </div>
+    <div class="detail-field">
+        <strong>最後更新時間</strong>
+        <div>@Model.UpdatedAt</div>
+    </div>
+
+    <a asp-action="Index"
+    class="btn btn-outline-primary"
+    asp-route-sort="@ViewData["Sort"]"
+    asp-route-page="@ViewData["Page"]">
+        返回列表
+    </a>
+</div>
+
+<style>
+.work-item-detail {
+    max-width: 700px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+.detail-field {
+    margin-bottom: 20px;
+}
+</style>

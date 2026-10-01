@@ -1,0 +1,65 @@
+@model List<AdminWorkItemViewModel>
+@if (TempData["SuccessMessage"]!=null)
+{
+    <p>@TempData["SuccessMessage"]</p>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <p>@TempData["ErrorMessage"]</p>  
+}
+<div class="admin-panel">
+    <h2>Admin Panel</h2>
+    <a asp-action="Create"class="btn btn-outline-primary">
+        新增 Work Item
+    </a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Title</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>
+                        <div class="action-buttons">
+                            <a asp-action="Edit" asp-route-id="@item.Id" 
+                            class="btn btn-outline-primary" >編輯</a>
+                            <form asp-action="Delete" method="post" class="delete-form" asp-route-id="@item.Id">
+                            <button type="submit" class="btn btn-outline-danger">刪除</button> 
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+    const deleteForms=document.querySelectorAll(".delete-form");
+     deleteForms.forEach(deleteForm => {
+        deleteForm.addEventListener("submit",(event)=>{
+            const confirmed = confirm("確定要刪除此項目嗎？");
+            if (!confirmed) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+<style>
+.admin-panel {
+    max-width: 700px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+</style>

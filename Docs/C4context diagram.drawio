@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="第 1 页" id="A2Cyxfizx5GCZcmNE47Y">
+    <mxGraphModel dx="1414" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#ffffff, #121212)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-3" edge="1" parent="1" source="tnHXlk5O1z5rbrW9ZoUU-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="tnHXlk5O1z5rbrW9ZoUU-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="一般使用者" vertex="1">
+          <mxGeometry height="40" width="120" x="280" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="My Work Item System" vertex="1">
+          <mxGeometry height="40" width="120" x="280" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="確認/查看&lt;br&gt;&lt;pre dir=&quot;ltr&quot;&gt;&lt;code&gt; Work Item&lt;/code&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="50" width="100" x="340" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-6" edge="1" parent="1" source="tnHXlk5O1z5rbrW9ZoUU-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="tnHXlk5O1z5rbrW9ZoUU-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="admin" vertex="1">
+          <mxGeometry height="40" width="120" x="280" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="刪除/新增/修改&lt;br&gt;Work item" vertex="1">
+          <mxGeometry height="30" width="90" x="340" y="230" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="第 1 页" id="A2Cyxfizx5GCZcmNE47Y">
+    <mxGraphModel dx="1414" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#ffffff, #121212)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-10" edge="1" parent="1" source="tnHXlk5O1z5rbrW9ZoUU-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="tnHXlk5O1z5rbrW9ZoUU-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-8" parent="1" style="whiteSpace=wrap;html=1;" value="使用者/管理員" vertex="1">
+          <mxGeometry height="40" width="164" x="280" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-12" edge="1" parent="1" source="tnHXlk5O1z5rbrW9ZoUU-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="tnHXlk5O1z5rbrW9ZoUU-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-9" parent="1" style="whiteSpace=wrap;html=1;" value="ASP.NET Core MVC Web App&lt;br&gt;.net/C#" vertex="1">
+          <mxGeometry height="75" width="164" x="280" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-11" parent="1" style="whiteSpace=wrap;html=1;" value="SQLSERVER&lt;br&gt;DATAbase" vertex="1">
+          <mxGeometry height="40" width="164" x="280" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="EF CORE" vertex="1">
+          <mxGeometry height="30" width="60" x="370" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HTTP/HTTPS" vertex="1">
+          <mxGeometry height="30" width="60" x="384" y="125" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

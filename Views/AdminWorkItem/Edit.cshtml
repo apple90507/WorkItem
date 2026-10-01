@@ -1,0 +1,31 @@
+@model EditWorkItemViewModel
+<div class="work-item-form">
+    <h2>編輯 Work Item</h2>
+    <form asp-action="Edit" asp-route-id="@ViewData["Id"]" method="post">
+        <div class="mb-3">
+            <label asp-for="Title">標題</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description">描述</label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+    <div class="action-buttons">
+        <button type="submit" class="btn btn-primary">儲存</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            返回列表
+        </a>
+        </div>
+        </form>
+</div>
+<style>
+.work-item-form {
+    max-width: 600px;
+}
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+</style>

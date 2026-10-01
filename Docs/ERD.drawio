@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="第 1 页" id="A2Cyxfizx5GCZcmNE47Y">
+    <mxGraphModel dx="2241" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#ffffff, #121212)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-51" edge="1" parent="1" source="tnHXlk5O1z5rbrW9ZoUU-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="tnHXlk5O1z5rbrW9ZoUU-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-35" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="User" vertex="1">
+          <mxGeometry height="220" width="200" x="-240" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-38" parent="tnHXlk5O1z5rbrW9ZoUU-35" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;user_id&amp;nbsp; PK&lt;br&gt;&lt;/div&gt;&lt;div&gt;username&lt;/div&gt;&lt;div&gt;is_admin&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="200" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-39" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;UserWorkItem&lt;/span&gt;" vertex="1">
+          <mxGeometry height="220" width="200" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-40" parent="tnHXlk5O1z5rbrW9ZoUU-39" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;user_id (PK,FK)&lt;br&gt;workitem_id(PK,FK)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="200" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-52" edge="1" parent="1" source="tnHXlk5O1z5rbrW9ZoUU-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="tnHXlk5O1z5rbrW9ZoUU-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-41" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="WorkItem" vertex="1">
+          <mxGeometry height="220" width="200" x="320" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-42" parent="tnHXlk5O1z5rbrW9ZoUU-41" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;workitem_id&amp;nbsp; PK&lt;/div&gt;&lt;div&gt;title&lt;br&gt;description&lt;br&gt;created_at&lt;br&gt;updated_at&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="200" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-46" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1 to N" vertex="1">
+          <mxGeometry height="30" width="60" x="-30" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="tnHXlk5O1z5rbrW9ZoUU-49" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="N to 1&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

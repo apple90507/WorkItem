@@ -33,6 +33,11 @@ public class AppDbContext : DbContext
                 Id = 2,
                 Username = "Admin",
                 IsAdmin = true
+            },
+            new User{
+                Id = 3,
+                Username = "Bob",
+                IsAdmin = false
             }
         );
     }

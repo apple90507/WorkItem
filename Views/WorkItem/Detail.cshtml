@@ -32,11 +32,11 @@
     </div>
     <div class="detail-field">
         <strong>建立時間</strong>
-        <div>@Model.CreatedAt</div>
+        <div>@Model.CreatedAt.ToLocalTime()</div>
     </div>
     <div class="detail-field">
         <strong>最後更新時間</strong>
-        <div>@Model.UpdatedAt</div>
+        <div>@Model.UpdatedAt.ToLocalTime()</div>
     </div>
 
     <a asp-action="Index"

@@ -53,6 +53,12 @@ namespace MyWorkItem.Migrations
                             Id = 2,
                             IsAdmin = true,
                             Username = "Admin"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            IsAdmin = false,
+                            Username = "Bob"
                         });
                 });
 
